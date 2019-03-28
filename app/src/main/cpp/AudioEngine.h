@@ -14,7 +14,7 @@ public:
     bool start();
     void stop();
     void restart();
-    void setToneOn(bool isToneOn);
+    void setToneOn(bool isToneOn, int32_t frequency);
 
 private:
     Oscillator oscillator_;

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Wave Maker</string>
+    <string name="frequency">Frequency: %d Hz</string>
+    <string name="tap_here">TAP HERE!</string>
 </resources>

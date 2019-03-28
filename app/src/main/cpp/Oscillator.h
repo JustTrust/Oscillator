@@ -7,11 +7,12 @@
 
 #include <atomic>
 #include <stdint.h>
+#include <cmath>
 
 class Oscillator {
 public:
     void setWaveOn(bool isWaveOn);
-    void setSampleRate(int32_t sampleRate);
+    void setSampleRate(int32_t sampleRate, int32_t sampleFrequency);
     void render(float *audioData, int32_t numFrames);
 
 private:

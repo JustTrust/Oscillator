@@ -49,7 +49,7 @@ bool AudioEngine::start() {
 
     // Retrieves the sample rate of the stream for our oscillator.
     int32_t sampleRate = AAudioStream_getSampleRate(stream_);
-    oscillator_.setSampleRate(sampleRate);
+    oscillator_.setSampleRate(sampleRate, 0);
 
     // Sets the buffer size.
     AAudioStream_setBufferSizeInFrames(
@@ -84,6 +84,8 @@ void AudioEngine::stop() {
     }
 }
 
-void AudioEngine::setToneOn(bool isToneOn) {
+void AudioEngine::setToneOn(bool isToneOn, int32_t frequency) {
+    int32_t sampleRate = AAudioStream_getSampleRate(stream_);
+    oscillator_.setSampleRate(sampleRate, frequency);
     oscillator_.setWaveOn(isToneOn);
 }

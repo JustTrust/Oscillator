@@ -6,11 +6,10 @@
 #include <math.h>
 
 #define TWO_PI (3.14159 * 2)
-#define AMPLITUDE 0.3
-#define FREQUENCY 440.0
+#define AMPLITUDE 0.5
 
-void Oscillator::setSampleRate(int32_t sampleRate) {
-    phaseIncrement_ = (TWO_PI * FREQUENCY) / (double) sampleRate;
+void Oscillator::setSampleRate(int32_t sampleRate, int32_t sampleFrequency) {
+    phaseIncrement_ = (TWO_PI * sampleFrequency ) / (double) sampleRate;
 }
 
 void Oscillator::setWaveOn(bool isWaveOn) {
